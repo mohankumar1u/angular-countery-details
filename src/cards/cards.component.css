@@ -1,0 +1,18 @@
+.cards {
+  width: 250px;
+  border-radius: 10px;
+  margin: 20px;
+  background-color: white;
+}
+.flags {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px 10px 0px 0px;
+}
+.countryName {
+  font: bold;
+  font-weight: 600;
+}
+.countryValues {
+  text-align: left;
+}
