@@ -4,6 +4,13 @@
   margin: 20px;
   background-color: white;
 }
+.cards-darkmode{
+  width: 250px;
+  border-radius: 10px;
+  margin: 20px;
+  background-color: #2b3743;
+  -webkit-text-fill-color: white;
+}
 .flags {
   width: 100%;
   height: 150px;

@@ -17,12 +17,22 @@ export class AppComponent {
   region=[];
   selectedBrand="all";
   searchText;
+  darkmode="darkmode-off";
   constructor(private AppService: AppService) {}
   ngOnInit() {
     this.getCardDetails1();
   }
   valueSelected(){
     console.log(this.selectedBrand);
+  }
+  darkmodeChange(){
+    if(this.darkmode==="darkmode-off"){
+      this.darkmode = "darkmode-on"
+      console.log("darkmode");
+    }
+    else{
+       this.darkmode = "darkmode-off"
+    }
   }
   getCardDetails1 = () => {
     this.AppService.getCardDetails().subscribe(element => {

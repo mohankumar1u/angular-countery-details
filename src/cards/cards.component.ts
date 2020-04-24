@@ -10,11 +10,13 @@ export class CardsComponent implements OnInit {
 
   card:any;
   selectedBrand:string;
+  darkmode:string;
   @Input()
-   set OneInput({card, selectedBrand, searchText}) {  
+   set OneInput({card, selectedBrand, searchText, darkmode}) {  
       //console.log(card)
       this.card = card
       this.selectedBrand = selectedBrand
+      this.darkmode = darkmode
    }
 
   constructor() { }
