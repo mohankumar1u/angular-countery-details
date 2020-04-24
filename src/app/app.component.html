@@ -1,6 +1,10 @@
 <div class="home">
-  <input class="form-control" type="text" name="search" [(ngModel)]="searchText" >
-  <div class="cardsHoalder">
-    <app-cards *ngFor="let card of cards | filter:searchText" [card]="card"></app-cards>
+  <input class="form-control" type="text" name="search" [(ngModel)]
+  ="searchText" >
+  <select [(ngModel)]="selectedBrand" (change)="valueSelected()">
+  <option value={{item}} *ngFor="let item of this.region">{{ item }}</option>
+</select>
+  <div *ngFor="let card of cards | filter:searchText" class="cardsHoalder">
+    <app-cards  [OneInput]="{card: card, selectedBrand: selectedBrand, searchText:searchText}"></app-cards>
   </div>
 </div>

@@ -7,7 +7,16 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class CardsComponent implements OnInit {
 
-  @Input() card;
+
+  card:any;
+  selectedBrand:string;
+  @Input()
+   set OneInput({card, selectedBrand, searchText}) {  
+      //console.log(card)
+      this.card = card
+      this.selectedBrand = selectedBrand
+   }
+
   constructor() { }
 
   ngOnInit() {

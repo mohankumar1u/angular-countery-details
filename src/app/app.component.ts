@@ -15,11 +15,14 @@ export class AppComponent {
   cards: any;
   title = "Angular Search Using ng2-search-filter";
   region=[];
-  i=0;
+  selectedBrand="all";
   searchText;
   constructor(private AppService: AppService) {}
   ngOnInit() {
     this.getCardDetails1();
+  }
+  valueSelected(){
+    console.log(this.selectedBrand);
   }
   getCardDetails1 = () => {
     this.AppService.getCardDetails().subscribe(element => {
@@ -33,6 +36,7 @@ export class AppComponent {
       this.region = obj.filter(function(item, pos, self) {
     return self.indexOf(item) == pos;
 })
+this.region[6]="all"
          console.log(this.region)
 
     });
