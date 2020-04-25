@@ -6,7 +6,8 @@
 	<div *ngIf="(selecteditem | json)== '{}'">
 		<input [className]="darkmode == 'darkmode-off' ? 'search' : 'search-darkmode'" type="text" name="search" [(ngModel)]
       ="searchText" >
-		<select [(ngModel)]="selectedBrand" (change)="valueSelected()">
+      <label>filter by Region:</label>
+		<select name="filter by Region" [(ngModel)]="selectedBrand" (change)="valueSelected()">
          <option value={{item}} *ngFor="let item of this.region">{{ item }}</option>
      </select>
 		<div class="cardsHoalder">
