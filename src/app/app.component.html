@@ -1,11 +1,52 @@
 <div [className]="darkmode == 'darkmode-off' ? 'home' : 'home-darkmode'">
-  <button (click)="darkmodeChange()">darkmode</button>
-  <input class="form-control" type="text" name="search" [(ngModel)]
-  ="searchText" >
-  <select [(ngModel)]="selectedBrand" (change)="valueSelected()">
-  <option value={{item}} *ngFor="let item of this.region">{{ item }}</option>
-</select>
-  <div *ngFor="let card of cards | filter:searchText" class="cardsHoalder">
-    <app-cards (itemSelected)="onItemSelected(card)" [OneInput]="{card: card, selectedBrand: selectedBrand, searchText:searchText, darkmode:darkmode}"></app-cards>
-  </div>
-</div>
+	<div [className]="darkmode == 'darkmode-off' ? 'header' : 'header-darkmode'">
+		<div>where in the world?</div> <button (click)="darkmodeChange()">darkmode</button>
+	</div>
+
+	<div *ngIf="(selecteditem | json)== '{}'">
+		<input class="form-control" type="text" name="search" [(ngModel)]
+      ="searchText" >
+		<select [(ngModel)]="selectedBrand" (change)="valueSelected()">
+         <option value={{item}} *ngFor="let item of this.region">{{ item }}</option>
+     </select>
+		<div class="cardsHoalder">
+			<app-cards (itemSelected)="onItemSelected(card)"
+				[OneInput]="{card: card, selectedBrand: selectedBrand, searchText:searchText, darkmode:darkmode}"
+				*ngFor="let card of cards | filter:searchText">
+			</app-cards>
+		</div>
+	</div>
+	<div *ngIf="(selecteditem | json) != '{}'"
+		[className]="darkmode == 'darkmode-off' ? 'selectedItemPage' : 'selectedItemPage-darkmode'">
+		<button (click)="backToList()">back</button>
+		<div [className]="darkmode == 'darkmode-off' ? 'selectedItemData' : 'selectedItemData-darkmode'">
+			<div class="selectedItemImg"><img src={{selecteditem.flag}} alt="flag" class="flags"/></div>
+				<div>
+					<div>{{selecteditem.name}}</div>
+					<div>
+						<div class="selectedItemDetails">
+							<div>
+                <div> <span>Native Name: </span>{{selecteditem.nativeName}}</div>
+								<div> <span>population: </span>{{selecteditem.population}}</div>
+								<div> <span>region: </span>{{selecteditem.region}}</div>
+								<div> <span>Sub Region: </span>{{selecteditem.subregion}}</div>
+								<div><span>capital: </span>{{selecteditem.capital}}</div>
+							</div>
+							<div>
+								<div> <span>Top Level Domain: </span>{{selecteditem.topLevelDomain}}</div>
+								<div>
+									<div>
+										<span>currencies: </span><span *ngFor="let currencie of selecteditem.currencies">{{currencie.name}}, </span>
+									</div>
+									<div>
+										<span>languages: </span><span *ngFor="let language of selecteditem.languages">{{language.name}}, </span>
+									</div>
+									<div> <span>Sub Region: </span>{{selecteditem.subregion}}</div>
+								</div>
+							</div>
+						</div>
+             	<div>border countries:
+									<span *ngFor="let border of selecteditem.borders">{{border}} </span>
+								</div>
+					</div>
+				</div>

@@ -1,6 +1,10 @@
 p {
   font-family: Lato;
 }
+.header{
+  display: flex;
+  justify-content: space-b;
+}
 .cardsHoalder {
   display: flex;
   flex-wrap: wrap;
@@ -11,4 +15,16 @@ p {
 }
 .home-darkmode{
   background-color: #202d36;
+}
+.selectedItemData{
+  display: flex;
+}
+.selectedItemImg{
+  width: 50%
+}
+.selectedItemImg img{
+  width: 90%
+}
+.selectedItemDetails{
+   display: flex;
 }

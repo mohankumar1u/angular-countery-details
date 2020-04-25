@@ -18,15 +18,22 @@ export class AppComponent {
   selectedBrand="all";
   searchText;
   darkmode="darkmode-off";
+  selecteditem ={};
   constructor(private AppService: AppService) {}
   ngOnInit() {
     this.getCardDetails1();
+     console.log( this.selecteditem);
   }
   valueSelected(){
     console.log(this.selectedBrand);
   }
+  backToList(){
+    this.selecteditem={};
+  }
   onItemSelected(card){
-    console.log("selcetedCard",card)
+    console.log( this.selecteditem);
+    this.selecteditem=card
+    console.log( this.selecteditem);
   }
   darkmodeChange(){
     if(this.darkmode==="darkmode-off"){
