@@ -25,6 +25,9 @@ export class AppComponent {
   valueSelected(){
     console.log(this.selectedBrand);
   }
+  onItemSelected(card){
+    console.log("selcetedCard",card)
+  }
   darkmodeChange(){
     if(this.darkmode==="darkmode-off"){
       this.darkmode = "darkmode-on"

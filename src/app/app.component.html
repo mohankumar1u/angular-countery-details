@@ -6,6 +6,6 @@
   <option value={{item}} *ngFor="let item of this.region">{{ item }}</option>
 </select>
   <div *ngFor="let card of cards | filter:searchText" class="cardsHoalder">
-    <app-cards  [OneInput]="{card: card, selectedBrand: selectedBrand, searchText:searchText, darkmode:darkmode}"></app-cards>
+    <app-cards (itemSelected)="onItemSelected(card)" [OneInput]="{card: card, selectedBrand: selectedBrand, searchText:searchText, darkmode:darkmode}"></app-cards>
   </div>
 </div>

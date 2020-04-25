@@ -1,4 +1,4 @@
-<div [className]="darkmode == 'darkmode-off' ? 'cards' : 'cards-darkmode'" *ngIf="selectedBrand == 'all' || selectedBrand == card.region">
+<div [className]="darkmode == 'darkmode-off' ? 'cards' : 'cards-darkmode'" *ngIf="selectedBrand == 'all' || selectedBrand == card.region" (click)="singleItem(card)">
   <img src={{card.flag}} alt="flag" class="flags"/>
    <div class="countryName">{{card.name}}</div>
   <div class="countryValues"> <span>population: </span>{{card.population}}</div>
