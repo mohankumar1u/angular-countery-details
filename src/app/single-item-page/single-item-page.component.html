@@ -13,8 +13,7 @@
 					<div><span>capital: </span>{{selectedCard.capital}}</div>
 				</div>
 				<div>
-					<div> <span>Top Level Domain: </span>{{selectedCard.topLevelDomain}}</div>
-					<div>
+            <div> <span>Top Level Domain: </span>{{selectedCard.topLevelDomain}}</div>
 						<div>
 							<span>currencies: </span><span *ngFor="let currencie of selectedCard.currencies">{{currencie.name}}, </span>
 						</div>
@@ -22,11 +21,10 @@
 							<span>languages: </span><span *ngFor="let language of selectedCard.languages">{{language.name}}, </span>
 						</div>
 						<div> <span>Sub Region: </span>{{selectedCard.subregion}}</div>
-					</div>
 				</div>
 			</div>
-			<div>border countries:
-				<span *ngFor="let border of selectedCard.borders">{{border}} </span>
+			<div class="borders">border countries:
+				<button [className]="darkmode == 'darkmode-off' ? 'border' : 'border-darkmode'" *ngFor="let border of selectedCard.borders">{{border}} </button>
 			</div>
 		</div>
 

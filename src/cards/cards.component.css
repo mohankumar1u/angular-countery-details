@@ -22,7 +22,9 @@
 .countryName {
   font: bold;
   font-weight: 600;
+  padding: 5%;
 }
 .countryValues {
   text-align: left;
+  padding-left: 5%;
 }

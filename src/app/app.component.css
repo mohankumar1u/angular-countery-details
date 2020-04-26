@@ -59,7 +59,12 @@ p {
 }
 .home {
   background-color: #fafafa;
+   font-family: Calibri;
 }
 .home-darkmode{
   background-color: #202d36;
+   font-family: Calibri;
+}
+.heading{
+  padding-left: 20px;
 }

@@ -11,7 +11,11 @@
 }
 .selectedItemDetails{
    display: flex;
+   justify-content: space-between;
    flex-wrap: wrap;
+}
+.selectedItemDetails div{
+  padding: 0px 0px 0px 20px;
 }
 .selectedItemData-darkmode{
    display: flex;
@@ -20,10 +24,15 @@
 }
 
 .countryName{
-  margin: 10% 2% 5% 0%;
+ margin: 10% 2% 5% 8%;
+  font-weight: 600;
+  font-size: large;
+}
+.borders{
+ margin-left: 40px;
 }
 .backToList{
-  padding: 5px 25px;
+    padding: 5px 25px;
     margin: 20px;
     background-color: white;
     border-color: whitesmoke;
@@ -32,6 +41,21 @@
 .backToList-darkmode{
    padding: 5px 25px;
     margin: 20px;
+    border-color:  lightslategrey;
+    border-radius: 4px;
+    background-color: #2b3743;
+    color: white;
+}
+.border{
+    padding: 5px ;
+    margin: 5px;
+    background-color: white;
+    border-color: whitesmoke;
+    border-radius: 4px;
+}
+.border-darkmode{
+    padding: 5px ;
+    margin: 5px;
     border-color:  lightslategrey;
     border-radius: 4px;
     background-color: #2b3743;

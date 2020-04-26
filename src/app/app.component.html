@@ -1,6 +1,6 @@
 <div [className]="darkmode == 'darkmode-off' ? 'home' : 'home-darkmode'">
 	<div [className]="darkmode == 'darkmode-off' ? 'header' : 'header-darkmode'">
-		<h1>where in the world?</h1> <button [className]="darkmode == 'darkmode-off' ? 'darkmode' : 'darkmode-on'"(click)="darkmodeChange()">Dark mode</button>
+		<h1 class="heading">where in the world?</h1> <button [className]="darkmode == 'darkmode-off' ? 'darkmode' : 'darkmode-on'"(click)="darkmodeChange()">Dark mode</button>
 	</div>
 
 	<div *ngIf="(selectedCard | json)== '{}'">
