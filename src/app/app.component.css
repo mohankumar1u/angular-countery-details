@@ -15,9 +15,28 @@ p {
 .search{
     border-color: whitesmoke;
     border-radius: 4px;
-    margin: 40px 350px 40px 40px;
-    width: 300px;
+    width: 60%;
+    margin: 5%;
     height: 30px;
+    box-sizing: border-box;
+}
+.search-darkmode{
+  border-color:  lightslategrey;
+    border-radius: 4px;
+    width: 60%;
+    margin: 5%;
+    height: 30px;
+    color:white;
+    background-color: #2b3743;
+    box-sizing: border-box;
+}
+.filterLabel-darkmode{
+   -webkit-text-fill-color: white;
+}
+.filter-darkmode{
+   background-color: #2b3743;
+    color:white;
+    box-sizing: border-box;
 }
 .darkmode{
   background-color: #ffffff;
@@ -26,7 +45,7 @@ p {
     border-color: whitesmoke;
     margin: 20px;
 }
-.darkmode-off{
+.darkmode-on{
    background-color: #2b3743;
     border-radius: 4px;
     height: 30px;

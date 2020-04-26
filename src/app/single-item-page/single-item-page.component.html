@@ -1,4 +1,5 @@
-<button (click)="backToList()">back</button>
+<button (click)="backToList()" [className]="darkmode == 'darkmode-off' ? 'backToList' : 'backToList-darkmode'">back</button>
+<div></div>
 <div [className]="darkmode == 'darkmode-off' ? 'selectedItemData' : 'selectedItemData-darkmode'">
 	<div class="selectedItemImg"><img src={{selectedCard.flag}} alt="flag" class="flags"/></div>
 		<div>
