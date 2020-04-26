@@ -14,51 +14,48 @@ export class AppComponent {
   name = "Angular";
   cards: any;
   title = "Angular Search Using ng2-search-filter";
-  region=[];
-  selectedBrand="all";
+  region = [];
+  selectedBrand = "all";
   searchText;
-  darkmode="darkmode-off";
-  selecteditem ={};
+  darkmode = "darkmode-off";
+  selectedCard = {};
   constructor(private AppService: AppService) {}
   ngOnInit() {
     this.getCardDetails1();
-     console.log( this.selecteditem);
+    console.log(this.selectedCard);
   }
-  valueSelected(){
+  valueSelected() {
     console.log(this.selectedBrand);
   }
-  backToList(){
-    this.selecteditem={};
+  backToList() {
+    this.selectedCard = {};
   }
-  onItemSelected(card){
-    console.log( this.selecteditem);
-    this.selecteditem=card
-    console.log( this.selecteditem);
+  onItemSelected(card) {
+    console.log(card);
+    this.selectedCard = card;
+    console.log(this.selectedCard);
   }
-  darkmodeChange(){
-    if(this.darkmode==="darkmode-off"){
-      this.darkmode = "darkmode-on"
+  darkmodeChange() {
+    if (this.darkmode === "darkmode-off") {
+      this.darkmode = "darkmode-on";
       console.log("darkmode");
-    }
-    else{
-       this.darkmode = "darkmode-off"
+    } else {
+      this.darkmode = "darkmode-off";
     }
   }
   getCardDetails1 = () => {
     this.AppService.getCardDetails().subscribe(element => {
       this.cards = element;
-      let obj =[];
-      for (let [key, value] of Object.entries(this.cards))
-       {
-          obj.push(value.region);
+      let obj = [];
+      for (let [key, value] of Object.entries(this.cards)) {
+        obj.push(value.region);
         // Object.assign(this.region , {key: value.region});
       }
       this.region = obj.filter(function(item, pos, self) {
-    return self.indexOf(item) == pos;
-})
-this.region[6]="all"
-         console.log(this.region)
-
+        return self.indexOf(item) == pos;
+      });
+      this.region[6] = "all";
+      console.log(this.region);
     });
   };
 }

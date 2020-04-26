@@ -1,12 +1,12 @@
 <div [className]="darkmode == 'darkmode-off' ? 'home' : 'home-darkmode'">
 	<div [className]="darkmode == 'darkmode-off' ? 'header' : 'header-darkmode'">
-		<h1>where in the world?</h1> <button class="darkmode"(click)="darkmodeChange()">Dark mode</button>
+		<h1>where in the world?</h1> <button [className]="darkmode == 'darkmode-off' ? 'darkmode' : 'darkmode-off'"(click)="darkmodeChange()">Dark mode</button>
 	</div>
 
-	<div *ngIf="(selecteditem | json)== '{}'">
+	<div *ngIf="(selectedCard | json)== '{}'">
 		<input [className]="darkmode == 'darkmode-off' ? 'search' : 'search-darkmode'" type="text" name="search" [(ngModel)]
       ="searchText" >
-      <label>filter by Region:</label>
+		<label>filter by Region:</label>
 		<select name="filter by Region" [(ngModel)]="selectedBrand" (change)="valueSelected()">
          <option value={{item}} *ngFor="let item of this.region">{{ item }}</option>
      </select>
@@ -17,37 +17,9 @@
 			</app-cards>
 		</div>
 	</div>
-	<div *ngIf="(selecteditem | json) != '{}'"
+	<div *ngIf="(selectedCard | json) != '{}'"
 		[className]="darkmode == 'darkmode-off' ? 'selectedItemPage' : 'selectedItemPage-darkmode'">
-		<button (click)="backToList()">back</button>
-		<div [className]="darkmode == 'darkmode-off' ? 'selectedItemData' : 'selectedItemData-darkmode'">
-			<div class="selectedItemImg"><img src={{selecteditem.flag}} alt="flag" class="flags"/></div>
-				<div>
-					<div>{{selecteditem.name}}</div>
-					<div>
-						<div class="selectedItemDetails">
-							<div>
-                <div> <span>Native Name: </span>{{selecteditem.nativeName}}</div>
-								<div> <span>population: </span>{{selecteditem.population}}</div>
-								<div> <span>region: </span>{{selecteditem.region}}</div>
-								<div> <span>Sub Region: </span>{{selecteditem.subregion}}</div>
-								<div><span>capital: </span>{{selecteditem.capital}}</div>
-							</div>
-							<div>
-								<div> <span>Top Level Domain: </span>{{selecteditem.topLevelDomain}}</div>
-								<div>
-									<div>
-										<span>currencies: </span><span *ngFor="let currencie of selecteditem.currencies">{{currencie.name}}, </span>
-									</div>
-									<div>
-										<span>languages: </span><span *ngFor="let language of selecteditem.languages">{{language.name}}, </span>
-									</div>
-									<div> <span>Sub Region: </span>{{selecteditem.subregion}}</div>
-								</div>
-							</div>
-						</div>
-             	<div>border countries:
-									<span *ngFor="let border of selecteditem.borders">{{border}} </span>
-								</div>
-					</div>
-				</div>
+		<app-single-item-page [OneInput]="{selectedCard: selectedCard, darkmode:darkmode}"
+			(itemSelected)="backToList(card)"></app-single-item-page>
+	</div>
+</div>

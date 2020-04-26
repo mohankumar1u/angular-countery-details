@@ -1,5 +1,5 @@
 p {
-  font-family: Lato;
+  font-family: Calibri;
 }
 .header{
   display: flex;
@@ -9,7 +9,8 @@ p {
 .header-darkmode{
   display: flex;
   justify-content: space-between;
-  background-color: #ffffff;
+  background-color: #2b3743;
+  -webkit-text-fill-color: white;
 }
 .search{
     border-color: whitesmoke;
@@ -25,6 +26,13 @@ p {
     border-color: whitesmoke;
     margin: 20px;
 }
+.darkmode-off{
+   background-color: #2b3743;
+    border-radius: 4px;
+    height: 30px;
+    border-color: lightslategrey;
+    margin: 20px;
+}
 .cardsHoalder {
   display: flex;
   flex-wrap: wrap;
@@ -35,16 +43,4 @@ p {
 }
 .home-darkmode{
   background-color: #202d36;
-}
-.selectedItemData{
-  display: flex;
-}
-.selectedItemImg{
-  width: 50%
-}
-.selectedItemImg img{
-  width: 90%
-}
-.selectedItemDetails{
-   display: flex;
 }

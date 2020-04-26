@@ -1,0 +1,12 @@
+.selectedItemData{
+  display: flex;
+}
+.selectedItemImg{
+  width: 50%
+}
+.selectedItemImg img{
+  width: 90%
+}
+.selectedItemDetails{
+   display: flex;
+}
