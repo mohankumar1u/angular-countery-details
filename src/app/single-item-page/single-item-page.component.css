@@ -3,7 +3,7 @@
   flex-wrap: wrap;
 }
 .selectedItemImg{
-  width: 50%;
+  width: 40%;
  padding: 3% 0% 5% 5%;
 }
 .selectedItemImg img{
@@ -17,6 +17,10 @@
    display: flex;
    flex-wrap: wrap;
   -webkit-text-fill-color: white;
+}
+
+.countryName{
+  margin: 10% 2% 5% 0%;
 }
 .backToList{
   padding: 5px 25px;
