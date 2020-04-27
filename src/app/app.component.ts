@@ -15,7 +15,7 @@ export class AppComponent {
   cards: any;
   title = "Angular Search Using ng2-search-filter";
   region = [];
-  selectedBrand = "all";
+  selectedBrand = "filter by Region";
   searchText;
   darkmode = "darkmode-off";
   selectedCard = {};
@@ -54,7 +54,7 @@ export class AppComponent {
       this.region = obj.filter(function(item, pos, self) {
         return self.indexOf(item) == pos;
       });
-      this.region[6] = "all";
+      this.region[6] = "filter by Region";
       console.log(this.region);
     });
   };

@@ -6,7 +6,7 @@
 	<div *ngIf="(selectedCard | json)== '{}'">
 		<input [className]="darkmode == 'darkmode-off' ? 'search' : 'search-darkmode'" type="text" name="search" [(ngModel)]
       ="searchText"  placeholder="search for country" >
-		<label [className]="darkmode == 'darkmode-off' ? 'filterLabel' : 'filterLabel-darkmode'">filter by Region:</label>
+		<label [className]="darkmode == 'darkmode-off' ? 'filterLabel' : 'filterLabel-darkmode'"></label>
 		<select name="filter by Region" [(ngModel)]="selectedBrand" (change)="valueSelected()" [className]="darkmode == 'darkmode-off' ? 'filter' : 'filter-darkmode'">
          <option value={{item}} *ngFor="let item of this.region">{{ item }}</option>
      </select>
