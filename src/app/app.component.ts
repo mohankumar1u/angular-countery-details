@@ -19,6 +19,7 @@ export class AppComponent {
   searchText;
   darkmode = "darkmode-off";
   selectedCard = {};
+  cardborders =[];
   constructor(private AppService: AppService) {}
   ngOnInit() {
     this.getCardDetails1();
@@ -27,13 +28,30 @@ export class AppComponent {
   valueSelected() {
     console.log(this.selectedBrand);
   }
-  backToList() {
-    this.selectedCard = {};
+  onBackToList(card) {
+    console.log(card,"call")
+    this.cardborders =[];
+    this.selectedCard = card;
   }
   onItemSelected(card) {
-    console.log(card);
+     this.cardborders =[];
+     console.log(card.borders);
+     if(card.borders==undefined){
+       this.selectedCard = card;
+     }else{
+        for(let i=0;i<card.borders.length; i++){
+     for (let [key, value] of Object.entries(this.cards)) {
+       if(card.borders[i]==value.alpha3Code){
+         this.cardborders.push(value);  
+       }
+        //obj.push(value.region);
+        // Object.assign(this.region , {key: value.region});
+      }
+    }
     this.selectedCard = card;
-    console.log(this.selectedCard);
+     }
+   
+   // console.log(this.selectedCard);
   }
   darkmodeChange() {
     if (this.darkmode === "darkmode-off") {

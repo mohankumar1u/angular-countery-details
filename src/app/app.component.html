@@ -19,7 +19,7 @@
 	</div>
 	<div *ngIf="(selectedCard | json) != '{}'"
 		[className]="darkmode == 'darkmode-off' ? 'selectedItemPage' : 'selectedItemPage-darkmode'">
-		<app-single-item-page [OneInput]="{selectedCard: selectedCard, darkmode:darkmode}"
-			(itemSelected)="backToList(card)"></app-single-item-page>
+		<app-single-item-page [OneInput]="{selectedCard: selectedCard, darkmode:darkmode, cardborders:cardborders}"
+			(backToList)="onItemSelected($event)"></app-single-item-page>
 	</div>
 </div>

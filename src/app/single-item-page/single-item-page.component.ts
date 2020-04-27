@@ -8,19 +8,26 @@ import { Component, OnInit , Input, Output, EventEmitter } from '@angular/core';
 export class SingleItemPageComponent implements OnInit {
   selectedCard:any;
   darkmode:string;
+  cardborders:any;
   @Input()
-   set OneInput({selectedCard, darkmode}) {  
+   set OneInput({selectedCard, darkmode, cardborders}) {  
       //console.log(card)
       this.selectedCard = selectedCard
       this.darkmode = darkmode
+      this.cardborders = cardborders
    }
-    @Output() itemSelected = new EventEmitter();
+    @Output() backToList = new EventEmitter<any>();
 
   constructor() { }
-   backToList(){
+   onBackToList(){
      console.log("back button clicked")
     let value ={};
-    this.itemSelected.emit(value);
+    this.cardborders =[];
+    this.backToList.emit(value);
+  }
+  goToBorderCard(card){
+    console.log(card);
+    this.backToList.emit(card);
   }
 
   ngOnInit() {

@@ -29,7 +29,10 @@
   font-size: large;
 }
 .borders{
- margin-left: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 30em;
+    margin: 4% 8.2%;
 }
 .backToList{
     padding: 5px 25px;

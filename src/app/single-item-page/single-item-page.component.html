@@ -1,4 +1,4 @@
-<button (click)="backToList()" [className]="darkmode == 'darkmode-off' ? 'backToList' : 'backToList-darkmode'">back</button>
+<button (click)="onBackToList()" [className]="darkmode == 'darkmode-off' ? 'backToList' : 'backToList-darkmode'">back</button>
 <div></div>
 <div [className]="darkmode == 'darkmode-off' ? 'selectedItemData' : 'selectedItemData-darkmode'">
 	<div class="selectedItemImg"><img src={{selectedCard.flag}} alt="flag" class="flags"/></div>
@@ -24,7 +24,7 @@
 				</div>
 			</div>
 			<div class="borders">border countries:
-				<button [className]="darkmode == 'darkmode-off' ? 'border' : 'border-darkmode'" *ngFor="let border of selectedCard.borders">{{border}} </button>
+				<button  (click)="goToBorderCard(border)" [className]="darkmode == 'darkmode-off' ? 'border' : 'border-darkmode'" *ngFor="let border of cardborders">{{border.name}} </button>
 			</div>
 		</div>
 
