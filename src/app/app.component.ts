@@ -1,5 +1,6 @@
 import { Component, OnInit, Pipe, PipeTransform } from "@angular/core";
 import { AppService } from "./app.service";
+import {Routes, RouterModule, Router} from '@angular/router';
 @Component({
   selector: "my-app",
   templateUrl: "./app.component.html",
@@ -20,7 +21,7 @@ export class AppComponent {
   darkmode = "darkmode-off";
   selectedCard = {};
   cardborders =[];
-  constructor(private AppService: AppService) {}
+  constructor(private AppService: AppService, private router: Router) {}
   ngOnInit() {
     this.getCardDetails1();
     console.log(this.selectedCard);
@@ -38,6 +39,7 @@ export class AppComponent {
      console.log(card.borders);
      if(card.borders==undefined){
        this.selectedCard = card;
+       this.router.navigate(['/cards'])
      }else{
         for(let i=0;i<card.borders.length; i++){
      for (let [key, value] of Object.entries(this.cards)) {
