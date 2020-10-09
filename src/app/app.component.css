@@ -66,6 +66,12 @@ p {
     border-color: lightslategrey;
     margin: 20px;
 }
+.selectedItemPage{
+  height: 100vh;
+}
+.selectedItemPage-darkmode{
+  height: 100vh;
+}
 .cardsHoalder {
   display: flex;
   flex-wrap: wrap;
@@ -74,10 +80,12 @@ p {
 .home {
   background-color: #fafafa;
    font-family: Calibri;
+   height: 100%;
 }
 .home-darkmode{
   background-color: #202d36;
    font-family: Calibri;
+   height: 100%;
 }
 .heading{
   padding-left: 20px;
